@@ -8,21 +8,20 @@
 <title>Beers!</title>
 </head>
 <body>
-	<div class="brewId">
-		<h4>
-			Beer ID:
-			<c:out value="${brew.id }" />
-		</h4>
-		<c:if test="${empty brew.id}">Beer not found</c:if>
+	<div class="brewName">
+		<c:out value="${brew.bname } " />
+		<c:if test="${empty brew.name}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
-
-			<h3>${brew.name}(${brew.style})</h3>
+		<c:forEach var="brew" items="${bname}">
+			<h4>Beer ID: ${brew.id }</h4>
+			<h5>${brew.name}(${brew.style})</h5>
 			<p>Brewery: ${brew.breweryName} (${brew.breweryLocation})</p>
 			<p>ABV: ${brew.abv} / IBU: ${brew.ibu}</p>
 			<p>My Rating: ${brew.myRating} (Scale 1-5)</p>
+		</c:forEach>
 		</c:if>
 	</div>
-
+		
 	<br>
 	<br>
 	<form action="updateBrewFields.do" method="GET">

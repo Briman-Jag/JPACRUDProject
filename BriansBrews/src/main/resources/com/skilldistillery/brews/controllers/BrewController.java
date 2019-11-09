@@ -39,10 +39,10 @@ public class BrewController {
 	public ModelAndView getBrewByTitle(@RequestParam("bname") String bname) {
 		ModelAndView mv = new ModelAndView();
 		
-		Brew brew = brewDAO.findByName(bname);
+		List<Brew> foundBrew = brewDAO.findByName(bname);
 		
-		mv.addObject("brew", brew);
-		mv.setViewName("brew/show");
+		mv.addObject("bname", foundBrew);
+		mv.setViewName("brew/showByName");
 		return mv;
 	}
 	
@@ -53,5 +53,19 @@ public class BrewController {
 		  
 		return "brew/showall";
 	}
+	
+	@RequestMapping(path = "deleteBrew.do", params = "bid", method = RequestMethod.POST)
+	public ModelAndView deleteBrew(@RequestParam("bid") int bid) {
+
+		boolean delete = brewDAO.destroy(bid);
+
+		ModelAndView mv = new ModelAndView();
+		Brew foundBrew = brewDAO.findById(bid);
+		mv.addObject("brew", foundBrew);
+		mv.setViewName("delete");
+		return mv;
+	}
+	
+	
 
 }

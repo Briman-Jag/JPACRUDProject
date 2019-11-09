@@ -21,7 +21,6 @@
 	<form action="getAllBrews.do" method="GET">
 		<input type="submit" name="bid" value="Full Beer List" />
 	</form>
-
 	<br>
 
 </body>
