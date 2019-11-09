@@ -14,5 +14,7 @@
 		<a href="getBrew.do?bid=${brew.id }">${brew.name }</a>
 		<br>
 	</c:forEach>
+	<br>
+	<a href="/" class="btn btn-secondary" role="button">Home</a>
 </body>
 </html>
