@@ -16,7 +16,7 @@
 
 	<c:forEach var="brew" items="${allBrews}">
 
-		<a href="getFilm.do?fid=${brew.id }">${brew.name }</a>
+		<a href="getBrew.do?bid=${brew.id }">${brew.name }</a>
 		<br>
 	</c:forEach>
 

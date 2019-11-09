@@ -36,7 +36,7 @@ public class BrewController {
 		// DAO
 
 		mv.addObject("brew", brew);
-		mv.setViewName("brew");
+		mv.setViewName("brew/show");
 		return mv;
 	}
 
