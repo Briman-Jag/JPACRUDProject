@@ -33,7 +33,6 @@ public class Brew {
 	@Column(name = "my_rating")
 	private double myRating;
 	
-	
 	public String getName() {
 		return name;
 	}

@@ -40,7 +40,13 @@ class BrewTest {
 
 	@Test
 	void test1() {
-		assertEquals("Habenero Sculpin", brew.getName().toLowerCase());
+		assertEquals("Habenero Sculpin", brew.getName());
+		assertEquals("Stone Brewing", brew.getBreweryName());
+		assertEquals("San Diego, CA", brew.getBreweryLocation());
+		assertEquals("IPA", brew.getStyle());
+		assertEquals(7.0, brew.getAbv());
+		assertEquals(70, brew.getIbu());
+		
 	}
 
 }
