@@ -10,15 +10,19 @@
 <body>
 	<form action="getBrew.do" method="GET">
 		Beer ID: <input type="text" name="bid" /> <input type="submit"
-			value="Show Beer" />
+			value="Search ID" />
 	</form>
 	<br>
+	<form action="getBrewByName.do" method="GET">
+		Search Beer Name <input type="text" name="bname" /> <input
+			type="submit" value="Search Beer" />
+	</form>
+	<br>
+	<form action="getAllBrews.do" method="GET">
+		<input type="submit" name="bid" value="Full Beer List" />
+	</form>
 
-	<c:forEach var="brew" items="${allBrews}">
-
-		<a href="getBrew.do?bid=${brew.id }">${brew.name }</a>
-		<br>
-	</c:forEach>
+	<br>
 
 </body>
 </html>

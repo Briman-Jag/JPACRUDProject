@@ -13,10 +13,10 @@ public class Brew {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	public void setId(int id) {
-		this.id = id;
+	public int getId() {
+		return id;
 	}
-	
+
 	@Column(name = "beer_name")
 	private String name;
 	

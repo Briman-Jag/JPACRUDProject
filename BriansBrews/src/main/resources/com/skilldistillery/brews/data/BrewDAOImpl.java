@@ -32,11 +32,11 @@ public class BrewDAOImpl implements BrewDAO {
 
 	@Override
 	public List<Brew> findAll() {
-		String sql = "SELECT b FROM Brew b";
-		List<Brew> allBrews = em.createQuery(sql, Brew.class).getResultList();
+		String jpql = "SELECT b FROM Brew b";
+		List<Brew> allBrews = em.createQuery(jpql, Brew.class).getResultList();
 		return allBrews;
 	}
-
+   
 	@Override
 	public Brew update(int id, Brew brew) {
 		Brew updateBrew = em.find(Brew.class, id);
@@ -59,6 +59,15 @@ public class BrewDAOImpl implements BrewDAO {
 		em.remove(deleteBrew);
 
 		return destroyed;
+	}
+
+	@Override
+	public Brew findByName(String bname) {
+		String jpql = "Select b FROM Brew b WHERE b.name = :bName";
+		
+		List<Brew> results = em.createQuery(jpql, Brew.class).setParameter("bName", "%" + bname + "%").getResultList();
+		
+		return results.size() == 0 ?  null : results.get(0);
 	}
 
 }
