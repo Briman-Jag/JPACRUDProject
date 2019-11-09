@@ -22,13 +22,13 @@ public class BrewController {
 	@RequestMapping(path="/", method = RequestMethod.GET)
 	public String index(Model model) {
 	  List<Brew> allBrews = brewDAO.findAll();
-	  model.addAttribute("allFilms", allBrews);
+	  model.addAttribute("allBrews", allBrews);
 	  
 	  return "index";
 	}
 
-	@RequestMapping(path = "getFilm.do", method = RequestMethod.GET)
-	public ModelAndView getFilm(@RequestParam("fid") int bid) {
+	@RequestMapping(path = "getBrew.do", method = RequestMethod.GET)
+	public ModelAndView getFilm(@RequestParam("bid") int bid) {
 		ModelAndView mv = new ModelAndView();
 
 		Brew brew = brewDAO.findById(bid);
