@@ -10,11 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.brews.data.BrewDAOImpl;
+import com.skilldistillery.brews.entities.Brew;
+
 @Controller
 public class BrewController {
 	
 	@Autowired
-	private BrewDAO brewDAO;
+	private BrewDAOImpl brewDAO;
 	
 	@RequestMapping(path="/", method = RequestMethod.GET)
 	public String index(Model model) {

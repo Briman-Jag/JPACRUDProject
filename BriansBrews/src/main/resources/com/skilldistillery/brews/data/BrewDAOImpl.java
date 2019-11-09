@@ -1,29 +1,39 @@
 package com.skilldistillery.brews.data;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Service;
 
 import com.skilldistillery.brews.entities.Brew;
 
-public class BrewDAOImpl implements BrewDAO{
-	
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("BrewsDB");
+@Transactional
+@Service
+public class BrewDAOImpl implements BrewDAO {
+
+	@PersistenceContext
 	private static EntityManager em;
 
 	@Override
 	public Brew create(Brew brew) {
-		em = emf.createEntityManager();
-		
-		em.getTransaction().begin();
 
 		return brew;
 	}
 
 	@Override
-	public Brew readAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public Brew findById(int id) {
+
+		return em.find(Brew.class, id);
+	}
+
+	@Override
+	public List<Brew> findAll() {
+		String sql = "SELECT b FROM Brew b";
+		List<Brew> allBrews = em.createQuery(sql, Brew.class).getResultList();
+		return allBrews;
 	}
 
 	@Override
@@ -37,6 +47,5 @@ public class BrewDAOImpl implements BrewDAO{
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 
 }
