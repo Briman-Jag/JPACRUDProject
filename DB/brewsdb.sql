@@ -48,7 +48,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `brewsdb`;
-INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (1, 'Habenero Sculpin', 'Stone Brewing', 'San Diego, CA', 'IPA', 7, 70, '5.0');
+INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (1, 'Habenero Sculpin', 'Stone Brewing', 'San Diego, CA', 'IPA', 7.0, 70, '5.0');
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (2, 'Liquid Bliss', 'Terrapin Beer Co.', 'Athens, GA', 'Porter', 6.1, 30, '5.0');
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (3, 'Peanut Butter Milk Stout', 'Belching Beaver Brewery', 'San Diego, CA', 'Stout', 5.3, 30, '5.0');
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (4, 'Dunkelweizen', 'Culture Brewing Company', 'Solana Beach, CA', 'Dunkelweizen', 5.2, 16, '4.5');
@@ -56,8 +56,8 @@ INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `styl
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (6, '#9', 'Magic Hat Brewing Company', 'South Burlington, VT', 'Pale Ale', 5.1, 20, '4.5');
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (7, 'Pinner', 'Oskar Blues Brewery', 'Longmont, CO', 'Session IPA', 4.9, 35, '4.0');
 INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (8, 'Warrior IPA', 'Left Hand Brewing Company', 'Longmont, CO', 'IPA', 7.3, 60, '5.0');
-INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (9, 'Maplesaurus Rex', 'Pure Project Brewing', 'San Diego, CA', 'Imperial Stout', 14, NULL, '4.75');
-INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (10, 'Barrel-Aged \"On Fire, Jaguar\"', 'Automatic Brewing Co.', 'San Diego, CA', 'Sour', 6.3, NULL, '5.0');
+INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (9, 'Maplesaurus Rex', 'Pure Project Brewing', 'San Diego, CA', 'Imperial Stout', 14, 0, '4.75');
+INSERT INTO `Brew` (`id`, `beer_name`, `brewery_name`, `brewery_location`, `style`, `alcohol_by_volume`, `international_bitterness_units`, `my_rating`) VALUES (10, 'Barrel-Aged \"On Fire, Jaguar\"', 'Automatic Brewing Co.', 'San Diego, CA', 'Sour', 6.3, 0, '5.0');
 
 COMMIT;
 

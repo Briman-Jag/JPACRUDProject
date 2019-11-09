@@ -8,6 +8,8 @@
 </head>
 <body>
 	<div>
+		`
+		<h4>Beer ID: ${brew.id }</h4>
 		<h5>${brew.name}(${brew.style})</h5>
 		<p>Brewery: ${brew.breweryName} (${brew.breweryLocation})</p>
 		<p>ABV: ${brew.abv} / IBU: ${brew.ibu}</p>
