@@ -15,7 +15,7 @@ import com.skilldistillery.brews.entities.Brew;
 public class BrewDAOImpl implements BrewDAO {
 
 	@PersistenceContext
-	private static EntityManager em;
+	private EntityManager em;
 
 	@Override
 	public Brew create(Brew brew) {
