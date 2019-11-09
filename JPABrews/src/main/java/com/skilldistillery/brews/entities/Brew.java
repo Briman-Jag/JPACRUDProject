@@ -1,7 +1,6 @@
 package com.skilldistillery.brews.entities;
 
-import java.sql.Date;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,12 +13,26 @@ public class Brew {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@Column(name = "beer_name")
 	private String name;
+	
+	@Column(name = "brewery_name")
 	private String breweryName;
+	
+	@Column(name = "brewery_location")
 	private String breweryLocation;
+	
 	private String style;
 	
+	@Column(name = "alcohol_by_volume")
 	private double abv;
+	
+	@Column(name = "international_bitterness_units")
+	private int ibu;
+	
+	@Column(name = "my_rating")
+	private double myRating;
+	
 	
 	public String getName() {
 		return name;
@@ -63,15 +76,7 @@ public class Brew {
 	public void setMyRating(double myRating) {
 		this.myRating = myRating;
 	}
-	public Date getDateRated() {
-		return dateRated;
-	}
-	public void setDateRated(Date dateRated) {
-		this.dateRated = dateRated;
-	}
-	private int ibu;
-	private double myRating;
-	private Date dateRated;
+
 	
 
 }

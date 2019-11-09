@@ -9,7 +9,7 @@
     </provider>
 
 		<!-- class definitions -->
-		<class>com.skilldistillery.brews.entities.Brews</class>
+		<class>com.skilldistillery.brews.entities.Brew</class>
 
 
 		<properties>
