@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.skilldistillery.brews.data.BrewDAOImpl;
+import com.skilldistillery.brews.data.BrewDAO;
 import com.skilldistillery.brews.entities.Brew;
 
 @Controller
 public class BrewController {
 	
 	@Autowired
-	private BrewDAOImpl brewDAO;
+	private BrewDAO brewDAO;
 	
 	@RequestMapping(path="/", method = RequestMethod.GET)
 	public String index(Model model) {
@@ -32,14 +32,10 @@ public class BrewController {
 		ModelAndView mv = new ModelAndView();
 
 		Brew brew = brewDAO.findById(bid);
-		// film is unmanaged after it is outside of the transaction that exists in the
-		// DAO
 
 		mv.addObject("brew", brew);
 		mv.setViewName("brew/show");
 		return mv;
 	}
-
-
 
 }

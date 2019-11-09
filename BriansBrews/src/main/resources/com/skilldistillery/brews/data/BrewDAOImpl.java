@@ -19,6 +19,7 @@ public class BrewDAOImpl implements BrewDAO {
 
 	@Override
 	public Brew create(Brew brew) {
+		em.persist(brew);
 
 		return brew;
 	}
@@ -38,14 +39,26 @@ public class BrewDAOImpl implements BrewDAO {
 
 	@Override
 	public Brew update(int id, Brew brew) {
-		// TODO Auto-generated method stub
-		return null;
+		Brew updateBrew = em.find(Brew.class, id);
+
+		updateBrew.setName(brew.getName());
+		updateBrew.setBreweryName(brew.getBreweryName());
+		updateBrew.setBreweryLocation(brew.getBreweryLocation());
+		updateBrew.setStyle(brew.getStyle());
+		updateBrew.setAbv(brew.getAbv());
+		updateBrew.setIbu(brew.getIbu());
+		updateBrew.setMyRating(brew.getMyRating());
+
+		return updateBrew;
 	}
 
 	@Override
 	public boolean destroy(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean destroyed = true;
+		Brew deleteBrew = em.find(Brew.class, id);
+		em.remove(deleteBrew);
+
+		return destroyed;
 	}
 
 }
