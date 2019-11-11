@@ -38,14 +38,14 @@ public class BrewController {
 		return mv;
 	}
 
-	@RequestMapping(path = "getBrewByKeyword.do", method = RequestMethod.GET)
-	public ModelAndView getBrewByKeyword(@RequestParam("bname") String keyword) {
+	@RequestMapping(path = "getBrewByKeyword.do", params= "keyword", method = RequestMethod.GET)
+	public ModelAndView getBrewByKeyword(@RequestParam("keyword") String keyword) {
 		ModelAndView mv = new ModelAndView();
 
-		List<Brew> foundBrews = brewDAO.findByName(keyword);
-
-		mv.addObject("keyword", foundBrews);
-		mv.setViewName("brew/showByName");
+		List<Brew> foundBrews = brewDAO.findByKeyword(keyword);
+		
+		mv.addObject("foundBrews", foundBrews);
+		mv.setViewName("brew/showByKeyword");
 		return mv;
 	}
 
@@ -60,7 +60,7 @@ public class BrewController {
 	@RequestMapping(path = "addBrewForm.do", method = RequestMethod.GET)
 	public ModelAndView newFilmForm(@Valid Brew brew) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("createBrewForm");
+		mv.setViewName("brew/createBrewForm");
 		return mv;
 	}
 
@@ -104,9 +104,9 @@ public class BrewController {
 
 		brewDAO.destroy(bid);
 		ModelAndView mv = new ModelAndView();
-		Brew foundBrew = brewDAO.findById(bid);
-		mv.addObject("brew", foundBrew);
-		mv.setViewName("brew/delete");
+		Brew deleteBrew = brewDAO.findById(bid);
+		mv.addObject("brew", deleteBrew);
+		mv.setViewName("brew/deleteResult");
 		return mv;
 	}
 

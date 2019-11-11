@@ -8,20 +8,24 @@
 <title>Beers!</title>
 </head>
 <body>
-	<div class="brewId">
-		<h1>Beer Created! Cheers!</h1>
+	<div class="container">
+		<h2>Beer Created! Cheers!</h2>
 		<h4>
 			Beer ID:
 			<c:out value="${brew.id }" />
 		</h4>
 		<c:if test="${empty brew.id}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
-			<h4>Beer ID: ${brew.id }</h4>
-			<h5>${brew.name}(${brew.style})</h5>
+			<h2>${brew.name}(${brew.style})</h2>
 			<table>
 				<tr>
-					<td>Brewery: ${brew.breweryName} (${brew.breweryLocation})</td>
-					<td>ABV: ${brew.abv} / IBU: ${brew.ibu}</td>
+					<td>Brewery: ${brew.breweryName}</td>
+					<td>(${brew.breweryLocation})</td>
+				</tr>
+				<tr>
+					<td>ABV: ${brew.abv}% / IBU: ${brew.ibu}</td>
+				</tr>
+				<tr>
 					<td>My Rating (1-5): ${brew.myRating}</td>
 				</tr>
 			</table>
@@ -30,7 +34,7 @@
 
 	<br>
 	<br>
-	<form action="updateBrewFields.do" method="GET">
+	<form action="getBrewFields.do" method="GET">
 		<button type="submit" name="bid" value="${brew.id}">Update
 			Beer's Details</button>
 	</form>

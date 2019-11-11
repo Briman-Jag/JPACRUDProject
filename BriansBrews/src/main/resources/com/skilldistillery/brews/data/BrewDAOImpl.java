@@ -1,5 +1,7 @@
 package com.skilldistillery.brews.data;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -68,11 +70,15 @@ public class BrewDAOImpl implements BrewDAO {
 
 	@Override
 	public List<Brew> findByKeyword(String keyword) {
-		String jpql = "Select b FROM Brew b WHERE b.name = :keyword";
+		String jpql = "SELECT b FROM Brew b WHERE b.name = :keyword";
 
-		Brew result = em.createQuery(jpql, Brew.class).setParameter("keyword", "%" + bname + "%").getSingleResult();
-		
-		return result;
+		List<Brew> brews = new ArrayList<>();
+		for (Brew brew : brews) {
+			
+			brew.add(em.createQuery(jpql, Brew.class).setParameter("keyword", "%" + keyword + "%").getResultList());
+			
+		}
+		return brews;
 	}
 
 }

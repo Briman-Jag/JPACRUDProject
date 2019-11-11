@@ -14,16 +14,16 @@
 	</form>
 	<br>
 	<form action="getBrewByKeyword.do" method="GET">
-		Search Beer Name <input type="text" name="keyword" /> <input
-			type="submit" value="Search Beer" />
+		Search Beer By Keyword <input type="text" name="keyword" size= 30/> <input
+			type="submit" value="Search" />
 	</form>
 	<br>
-	<form action="addBrew.do" method="GET">
-		<input type="submit" name="bid" value="Add Beer to List" />
+	<form action="addBrewForm.do">
+		<input type="submit" value="Add Beer to List" />
 	</form>
 	<br>
 	<form action="getAllBrews.do" method="GET">
-		<input type="submit" name="bid" value="Full Beer List" />
+		<input type="submit" value="Full Beer List" />
 	</form>
 	<br>
 

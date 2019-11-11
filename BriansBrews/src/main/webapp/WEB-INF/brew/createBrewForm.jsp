@@ -12,13 +12,8 @@
 <body>
 	<h1>Add Beer and Details</h1>
 	<div class="container">
-		Beer ID:
-		<c:out value="${brew.id }" />
-		<c:if test="${empty brew.name }">No Beer found!</c:if>
-		<c:if test="${not empty brew }">
-
 			<form:form action="addBrew.do" method="POST"
-				modelAttribute="beer">
+				modelAttribute="brew">
 				<form:label path="name">Name:</form:label>
 				<form:input path="name" />
 				<form:errors path="name" />
@@ -90,10 +85,10 @@
 				</form:select>
 				<br />
 				<br />
-				<button type="submit" name="bid" value="${brew.id}">Update
-					Beer's Details</button>
+				<button type="submit" name="bid" value="${brew.id}">Add
+					Beer</button>
+				<a href="/" class="btn btn-secondary" role="button">Home</a>
 			</form:form>
-		</c:if>
 		<br />
 	</div>
 </body>
