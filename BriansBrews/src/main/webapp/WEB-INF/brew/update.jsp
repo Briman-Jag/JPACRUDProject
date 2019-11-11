@@ -18,7 +18,7 @@
 		<c:if test="${not empty film }">
 
 			<form:form action="saveBeerFields.do" method="POST"
-				modelAttribute="beer">
+				modelAttribute="brew">
 				<form:label path="name">Name:</form:label>
 				<form:input path="name" />
 				<form:errors path="name" />

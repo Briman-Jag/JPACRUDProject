@@ -17,7 +17,7 @@
 		<c:if test="${empty film.title }">No Beer found!</c:if>
 		<c:if test="${not empty film }">
 
-			<form:form action="saveBeerFields.do" method="POST"
+			<form:form action="addBrew.do" method="POST"
 				modelAttribute="beer">
 				<form:label path="name">Name:</form:label>
 				<form:input path="name" />
