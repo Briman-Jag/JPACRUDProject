@@ -15,12 +15,15 @@
 		</h4>
 		<c:if test="${empty brew.id}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
-
-			<h3>${brew.name} (${brew.style})</h3>
-			<p>Brewery: ${brew.breweryName} (${brew.breweryLocation})</p>
-			<p>ABV: ${brew.abv} / IBU: ${brew.ibu}</p>
-			<p>My Rating (1-5): ${brew.myRating} </p>
-			
+			<h4>Beer ID: ${brew.id }</h4>
+			<h5>${brew.name}(${brew.style})</h5>
+			<table>
+				<tr>
+					<td>Brewery: ${brew.breweryName} (${brew.breweryLocation})</td>
+					<td>ABV: ${brew.abv} / IBU: ${brew.ibu}</td>
+					<td>My Rating (1-5): ${brew.myRating}</td>
+				</tr>
+			</table>
 		</c:if>
 	</div>
 

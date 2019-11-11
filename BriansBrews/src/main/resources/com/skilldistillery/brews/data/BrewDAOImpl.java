@@ -67,12 +67,12 @@ public class BrewDAOImpl implements BrewDAO {
 	}
 
 	@Override
-	public List<Brew> findByName(String bname) {
-		String jpql = "Select b FROM Brew b WHERE b.name = :bname";
+	public List<Brew> findByKeyword(String keyword) {
+		String jpql = "Select b FROM Brew b WHERE b.name = :keyword";
 
-		List<Brew> results = em.createQuery(jpql, Brew.class).setParameter("bname", "%" + bname + "%").getResultList();
-
-		return results;
+		Brew result = em.createQuery(jpql, Brew.class).setParameter("keyword", "%" + bname + "%").getSingleResult();
+		
+		return result;
 	}
 
 }

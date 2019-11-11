@@ -8,7 +8,7 @@ public interface BrewDAO{
 	
 	public Brew create(Brew brew);
 	public Brew findById(int id);
-	public List<Brew> findByName(String bname);
+	public List<Brew> findByKeyword(String keyword);
 	public List<Brew> findAll();
 	public Brew update(int id, Brew brew);
 	public boolean destroy(int id);

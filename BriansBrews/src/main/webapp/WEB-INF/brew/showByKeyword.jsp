@@ -9,17 +9,21 @@
 </head>
 <body>
 	<div class="container">
-		<c:out value="${bname } " />
-		<c:if test="${empty brew.name}">Beer not found</c:if>
+		<c:forEach var="brew" items="${brews}">
+		<c:out value="${keyword } " />
+		<c:if test="${empty name}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
-		<c:forEach var="brew" items="${bname}">
 			<h4>Beer ID: ${brew.id }</h4>
 			<h5>${brew.name}(${brew.style})</h5>
-			<p>Brewery: ${brew.breweryName} (${brew.breweryLocation})</p>
-			<p>ABV: ${brew.abv} / IBU: ${brew.ibu}</p>
-			<p>My Rating (1-5): ${brew.myRating} </p>
-		</c:forEach>
+		<table>
+			<tr>
+			<td>Brewery: ${brew.breweryName} (${brew.breweryLocation})</td>
+			<td>ABV: ${brew.abv} / IBU: ${brew.ibu}</td>
+			<td>My Rating (1-5): ${brew.myRating}</td>
+			</tr>
+		</table>
 		</c:if>
+		</c:forEach>
 	</div>
 	<br>
 	<br>
