@@ -26,7 +26,7 @@
 
 	<br>
 	<br>
-	<form action="updateBrewFields.do" method="GET">
+	<form action="getBrewFields.do" method="GET">
 		<button type="submit" name="bid" value="${brew.id}">Update
 			Beer's Details</button>
 	</form>

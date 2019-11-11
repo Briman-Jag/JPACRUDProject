@@ -34,8 +34,8 @@
 				<form:errors path="breweryLocation" />
 				<br />
 
-				<form:label path="Style">Style (currently ${brew.style}): </form:label>
-				<form:select path="Style">
+				<form:label path="style">Style (currently ${brew.style}): </form:label>
+				<form:select path="style">
 					<form:option value="Lager">Lager</form:option>
 					<form:option value="IPA">IPA</form:option>
 					<form:option value="Stout">Stout</form:option>
@@ -67,8 +67,8 @@
 				<form:errors path="ibu" />
 				<br />
 
-				<form:label path="rating">My Rating:</form:label>
-				<form:select path="rating">
+				<form:label path="myRating">My Rating:</form:label>
+				<form:select path="myRating">
 					<form:option value="${brew.myRating }"> (currently ${brew.myRating })</form:option>
 					<form:option value="5">5</form:option>
 					<form:option value="4.75">4.75</form:option>

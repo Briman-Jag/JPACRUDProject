@@ -56,7 +56,7 @@ public class BrewController {
 
 		return "brew/showall";
 	}
-	
+
 	@RequestMapping(path = "addBrewForm.do", method = RequestMethod.GET)
 	public ModelAndView newFilmForm(@Valid Brew brew) {
 		ModelAndView mv = new ModelAndView();
@@ -78,14 +78,24 @@ public class BrewController {
 		return mv;
 	}
 
-	@RequestMapping(path = "saveBrewFields.do", params = "bid", method = RequestMethod.POST)
-	public ModelAndView saveBrewields(@RequestParam("bid") int brewID, @Valid Brew brew) {
+	@RequestMapping(path = "getBrewFields.do", params = "bid", method = RequestMethod.GET)
+	public ModelAndView getBrewFields(@RequestParam("bid") int bid) {
 		ModelAndView mv = new ModelAndView();
 
-		Brew updatedBrew = brewDAO.update(brewID, brew);
-		brewDAO.findById(brewID);
+		Brew foundBrew = brewDAO.findById(bid);
+		mv.addObject("brew", foundBrew);
+		mv.setViewName("brew/update");
+		return mv;
+	}
+
+	@RequestMapping(path = "saveBrewFields.do", params = "bid", method = RequestMethod.POST)
+	public ModelAndView saveBrewields(@RequestParam("bid") int bid, @Valid Brew brew) {
+		ModelAndView mv = new ModelAndView();
+
+		Brew updatedBrew = brewDAO.update(bid, brew);
+		brewDAO.findById(bid);
 		mv.addObject("brew", updatedBrew);
-		mv.setViewName("show");
+		mv.setViewName("brew/show");
 		return mv;
 	}
 
