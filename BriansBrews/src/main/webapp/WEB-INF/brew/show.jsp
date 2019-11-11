@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <title>Beers!</title>
 </head>
+<style>.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}</style>
 <body>
 	<div class="container">
 		<h4>
@@ -42,6 +50,6 @@
 			Beer</button>
 	</form>
 	<br>
-	<a href="/" class="btn btn-secondary" role="button">Home</a>
+	<a href="/" class="btn btn-secondary" role="button"><i class="fa fa-home"></i>Home</a>
 </body>
 </html>

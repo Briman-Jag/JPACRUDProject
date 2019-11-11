@@ -9,6 +9,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Update Beer</title>
 </head>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {font-size: 12px;}
+</style>
 <body>
 	<h1>Update Beer Details</h1>
 	<div class="container">
@@ -93,7 +107,7 @@
 				<button type="submit" name="bid" value="${brew.id}">Update
 					Beer's Details</button>
 			</form:form>
-			<a href="/" class="btn btn-secondary" role="button">Home</a>
+			<a href="/" class="btn btn-secondary" role="button"><i class="fa fa-home"></i>Home</a>
 		</c:if>
 		<br />
 	</div>

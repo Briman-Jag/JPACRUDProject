@@ -21,7 +21,7 @@
 	</form> -->
 	<br>
 	<form action="addBrewForm.do">
-		<input type="submit" value="Add Beer to List" />
+	<button class="button button2" type="submit">Add Beer to List</button>
 	</form>
 	<br>
 	<br>

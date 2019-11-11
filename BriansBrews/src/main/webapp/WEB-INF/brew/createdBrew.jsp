@@ -7,6 +7,20 @@
 <meta charset="UTF-8">
 <title>Beers!</title>
 </head>
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button2 {font-size: 12px;}
+</style>
 <body>
 	<div class="container">
 		<h2>Beer Created! Cheers!</h2>
@@ -43,6 +57,6 @@
 			Beer</button>
 	</form>
 	<br>
-	<a href="/" class="btn btn-secondary" role="button">Home</a>
+		<a href="/" class="btn btn-secondary" role="button"><i class="fa fa-home"></i>Home</a>
 </body>
 </html>
