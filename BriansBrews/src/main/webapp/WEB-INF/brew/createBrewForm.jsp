@@ -87,6 +87,7 @@
 				<br />
 				<button type="submit" name="bid" value="${brew.id}">Add
 					Beer</button>
+				<br>
 				<a href="/" class="btn btn-secondary" role="button">Home</a>
 			</form:form>
 		<br />

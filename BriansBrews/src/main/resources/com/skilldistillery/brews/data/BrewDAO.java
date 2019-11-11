@@ -11,5 +11,5 @@ public interface BrewDAO{
 	public List<Brew> findAll();
 	public Brew update(int id, Brew brew);
 	public boolean destroy(int id);
-	public Brew findByName(String name);
+//	public Brew findByName(String name);
 }

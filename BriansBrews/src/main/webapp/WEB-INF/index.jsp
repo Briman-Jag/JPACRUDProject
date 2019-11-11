@@ -14,10 +14,11 @@
 			value="Search ID" />
 	</form>
 	<br>
-	<form action="getBrewByName.do" method="GET">
+	<!-- Used if list is longer -->
+<!-- 	<form action="getBrewByName.do" method="GET">
 		Search Beer By Name <input type="text" name="name" size=30 /> <input
 			type="submit" value="Search" />
-	</form>
+	</form> -->
 	<br>
 	<form action="addBrewForm.do">
 		<input type="submit" value="Add Beer to List" />

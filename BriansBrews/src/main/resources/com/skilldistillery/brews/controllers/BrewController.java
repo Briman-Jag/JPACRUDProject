@@ -40,19 +40,20 @@ public class BrewController {
 		return mv;
 	}
 
-	@RequestMapping(path = "getBrewByName.do", params= "name", method = RequestMethod.GET)
-	public ModelAndView getBrewByName(@RequestParam("name") String name) {
-		ModelAndView mv = new ModelAndView();
-
-		Brew foundBrew = brewDAO.findByName(name);
-		
-		mv.addObject("brew", foundBrew);
-		mv.setViewName("brew/showByName");
-		return mv;
-	}
+	// May be necessary for larger list
+//	@RequestMapping(path = "getBrewByName.do", params= "name", method = RequestMethod.GET)
+//	public ModelAndView getBrewByName(@RequestParam("name") String name) {
+//		ModelAndView mv = new ModelAndView();
+//
+//		Brew foundBrew = brewDAO.findByName(name);
+//		
+//		mv.addObject("brew", foundBrew);
+//		mv.setViewName("brew/showByName");
+//		return mv;
+//	}
 
 	@RequestMapping(path = "addBrewForm.do", method = RequestMethod.GET)
-	public ModelAndView newFilmForm(@Valid Brew brew) {
+	public ModelAndView newBrewForm(@Valid Brew brew) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("brew/createBrewForm");
 		return mv;
@@ -64,8 +65,8 @@ public class BrewController {
 		ModelAndView mv = new ModelAndView();
 		Brew newBrew = brewDAO.create(brew);
 
-		if (newBrew == null) {
-			errors.rejectValue("name", "error.title", "Name must be 1 to 35 letters long");
+		if (errors.hasErrors()) {
+			errors.rejectValue("name", "error.name", "Name must be 1 to 35 letters long");
 		}
 		mv.addObject("brew", newBrew);
 		mv.setViewName("brew/createdBrew");

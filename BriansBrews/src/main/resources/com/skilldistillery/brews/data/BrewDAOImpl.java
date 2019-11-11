@@ -68,14 +68,15 @@ public class BrewDAOImpl implements BrewDAO {
 		return destroyed;
 	}
 
-	@Override
-	public Brew findByName(String name) {
-		Brew foundBrew = new Brew();
+	// Save for when list is larger for search function
+//	@Override
+//	public Brew findByName(String name) {
+//		Brew foundBrew = new Brew();
+//
+//		String jpql = "SELECT b FROM Brew b WHERE b.name = :name";
+//		foundBrew = em.createQuery(jpql, Brew.class).setParameter("name", name).getSingleResult();
+//		em.close();
+//		return foundBrew;
+//	}
 
-		String jpql = "SELECT b FROM Brew b WHERE b.name = :name";
-		foundBrew = em.createQuery(jpql, Brew.class).setParameter("name", name).getSingleResult();
-		em.close();
-		return foundBrew;
-	}
-	
 }
