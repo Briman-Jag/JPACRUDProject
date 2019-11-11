@@ -107,7 +107,7 @@
 				<button type="submit" name="bid" value="${brew.id}">Update
 					Beer's Details</button>
 			</form:form>
-			<a href="/" class="btn btn-secondary" role="button"><i class="fa fa-home"></i>Home</a>
+			<a href="/" class="btn btn-secondary" role="button">Home</a>
 		</c:if>
 		<br />
 	</div>

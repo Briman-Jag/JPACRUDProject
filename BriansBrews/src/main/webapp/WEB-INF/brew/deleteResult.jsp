@@ -22,8 +22,8 @@
   cursor: pointer;
 }
 .button2 {font-size: 12px;}
-<body>
 </style>
+<body>
 	<h1>Deleted Film Result</h1>
 	<div class="container">
 		<c:if test="${empty brew.id}">Beer deleted</c:if>
