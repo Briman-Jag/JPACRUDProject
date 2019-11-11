@@ -56,6 +56,13 @@ public class BrewController {
 
 		return "brew/showall";
 	}
+	
+	@RequestMapping(path = "addBrewForm.do", method = RequestMethod.GET)
+	public ModelAndView newFilmForm(@Valid Brew brew) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("createBrewForm");
+		return mv;
+	}
 
 	@RequestMapping(path = "addBrew.do", params = "bid", method = RequestMethod.POST)
 	public ModelAndView createBrew(@Valid Brew brew, Errors errors) {
@@ -67,25 +74,25 @@ public class BrewController {
 			errors.rejectValue("name", "error.title", "Name must be 1 to 35 letters long");
 		}
 		mv.addObject("brew", newBrew);
-		mv.setViewName("brew/create");
+		mv.setViewName("brew/createdBrew");
 		return mv;
 	}
 
-	@RequestMapping(path = "saveFilmFields.do", params = "bid", method = RequestMethod.POST)
-	public ModelAndView saveFilmFields(@RequestParam("bid") int brewID, @Valid Brew brew) {
+	@RequestMapping(path = "saveBrewFields.do", params = "bid", method = RequestMethod.POST)
+	public ModelAndView saveBrewields(@RequestParam("bid") int brewID, @Valid Brew brew) {
 		ModelAndView mv = new ModelAndView();
 
 		Brew updatedBrew = brewDAO.update(brewID, brew);
-		Brew display = brewDAO.findById(brewID);
+		brewDAO.findById(brewID);
 		mv.addObject("brew", updatedBrew);
-		mv.setViewName("brew/update");
+		mv.setViewName("show");
 		return mv;
 	}
 
 	@RequestMapping(path = "deleteBrew.do", params = "bid", method = RequestMethod.POST)
 	public ModelAndView deleteBrew(@RequestParam("bid") int bid) {
 
-		boolean delete = brewDAO.destroy(bid);
+		brewDAO.destroy(bid);
 		ModelAndView mv = new ModelAndView();
 		Brew foundBrew = brewDAO.findById(bid);
 		mv.addObject("brew", foundBrew);

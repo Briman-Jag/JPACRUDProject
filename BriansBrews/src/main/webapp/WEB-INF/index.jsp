@@ -18,6 +18,10 @@
 			type="submit" value="Search Beer" />
 	</form>
 	<br>
+	<form action="addBrew.do" method="GET">
+		<input type="submit" name="bid" value="Add Beer to List" />
+	</form>
+	<br>
 	<form action="getAllBrews.do" method="GET">
 		<input type="submit" name="bid" value="Full Beer List" />
 	</form>

@@ -13,9 +13,9 @@
 	<h1>Add Beer and Details</h1>
 	<div class="container">
 		Beer ID:
-		<c:out value="${filmId }" />
-		<c:if test="${empty film.title }">No Beer found!</c:if>
-		<c:if test="${not empty film }">
+		<c:out value="${brew.id }" />
+		<c:if test="${empty brew.name }">No Beer found!</c:if>
+		<c:if test="${not empty brew }">
 
 			<form:form action="addBrew.do" method="POST"
 				modelAttribute="beer">
