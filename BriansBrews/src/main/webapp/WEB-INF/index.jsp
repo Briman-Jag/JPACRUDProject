@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Welcome to Brian's Brews</title>
 </head>
+<h1>Welcome to Brian's Beer List!</h1>
 <body>
 	<form action="getBrew.do" method="GET">
 		Beer ID: <input type="text" name="bid" /> <input type="submit"
@@ -14,7 +15,7 @@
 	</form>
 	<br>
 	<form action="getBrewByName.do" method="GET">
-		Search Beer By Keyword <input type="text" name="name" size= 30/> <input
+		Search Beer By Name <input type="text" name="name" size=30 /> <input
 			type="submit" value="Search" />
 	</form>
 	<br>
@@ -22,9 +23,15 @@
 		<input type="submit" value="Add Beer to List" />
 	</form>
 	<br>
-	<form action="getAllBrews.do" method="GET">
-		<input type="submit" value="Full Beer List" />
-	</form>
+	<br>
+	<h2>Select Beer to view Information</h2>
+	<c:forEach var="brew" items="${allBrews}">
+		<table>
+			<tr>
+				<td>${brew.id }. <a href="getBrew.do?bid=${brew.id }">${brew.name }</a></td>
+			<tr>
+		</table>
+	</c:forEach>
 	<br>
 
 </body>

@@ -14,7 +14,7 @@
 	<div class="container">
 		Beer ID:
 		<c:out value="${brew.id }" />
-		<c:if test="${empty brew.name }">No Beer found!</c:if>
+		<c:if test="${empty brew.id }">No Beer found!</c:if>
 		<c:if test="${not empty brew }">
 
 			<form:form action="saveBrewFields.do" method="POST"

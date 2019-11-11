@@ -8,14 +8,14 @@
 <title>Beers!</title>
 </head>
 <body>
-	<div class="brewId">
+	<div class="container">
 		<h4>
 			Beer ID:
 			<c:out value="${brew.id }" />
 		</h4>
 		<c:if test="${empty brew.id}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
-			<h2>${brew.name}(${brew.style})</h2>
+			<h2>${brew.name} (${brew.style})</h2>
 			<table>
 				<tr>
 					<td>Brewery: ${brew.breweryName}</td>

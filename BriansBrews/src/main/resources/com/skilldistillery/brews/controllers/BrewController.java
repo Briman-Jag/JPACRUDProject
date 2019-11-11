@@ -22,8 +22,10 @@ public class BrewController {
 	@Autowired
 	private BrewDAO brewDAO;
 
-	@RequestMapping(path = "/")
-	public String index() {
+	@RequestMapping(path = "/" , method = RequestMethod.GET)
+	public String index(Model model) {
+		List<Brew> allBrews = brewDAO.findAll();
+		  model.addAttribute("allBrews", allBrews);
 		return "index";
 	}
 
@@ -44,17 +46,9 @@ public class BrewController {
 
 		Brew foundBrew = brewDAO.findByName(name);
 		
-		mv.addObject("foundBrew", foundBrew);
+		mv.addObject("brew", foundBrew);
 		mv.setViewName("brew/showByName");
 		return mv;
-	}
-
-	@RequestMapping(path = "getAllBrews.do", method = RequestMethod.GET)
-	public String getAllBrews(Model model) {
-		List<Brew> allBrews = brewDAO.findAll();
-		model.addAttribute("allBrews", allBrews);
-
-		return "brew/showall";
 	}
 
 	@RequestMapping(path = "addBrewForm.do", method = RequestMethod.GET)

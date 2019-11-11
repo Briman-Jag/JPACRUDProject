@@ -9,9 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<c:forEach var="brew" items="${foundBrew}">
-			<c:out value="${name } " />
-			<c:if test="${empty brew.name}">Beer not found</c:if>
+			<c:out value="${brew.name }" />
+			<c:if test="${empty brew.id}">Beer not found</c:if>
 			<c:if test="${not empty brew }">
 				<h4>Beer ID: ${brew.id }</h4>
 				<h2>${brew.name}(${brew.style})</h2>
@@ -28,7 +27,6 @@
 					</tr>
 				</table>
 			</c:if>
-		</c:forEach>
 	</div>
 	<br>
 	<br>
