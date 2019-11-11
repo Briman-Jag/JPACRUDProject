@@ -21,7 +21,6 @@
 		</c:forEach>
 		</c:if>
 	</div>
-		
 	<br>
 	<br>
 	<form action="updateBrewFields.do" method="GET">
