@@ -38,14 +38,14 @@ public class BrewController {
 		return mv;
 	}
 
-	@RequestMapping(path = "getBrewByKeyword.do", params= "keyword", method = RequestMethod.GET)
-	public ModelAndView getBrewByKeyword(@RequestParam("keyword") String keyword) {
+	@RequestMapping(path = "getBrewByName.do", params= "name", method = RequestMethod.GET)
+	public ModelAndView getBrewByName(@RequestParam("name") String name) {
 		ModelAndView mv = new ModelAndView();
 
-		List<Brew> foundBrews = brewDAO.findByKeyword(keyword);
+		Brew foundBrew = brewDAO.findByName(name);
 		
-		mv.addObject("foundBrews", foundBrews);
-		mv.setViewName("brew/showByKeyword");
+		mv.addObject("foundBrew", foundBrew);
+		mv.setViewName("brew/showByName");
 		return mv;
 	}
 

@@ -13,8 +13,8 @@
 			value="Search ID" />
 	</form>
 	<br>
-	<form action="getBrewByKeyword.do" method="GET">
-		Search Beer By Keyword <input type="text" name="keyword" size= 30/> <input
+	<form action="getBrewByName.do" method="GET">
+		Search Beer By Keyword <input type="text" name="name" size= 30/> <input
 			type="submit" value="Search" />
 	</form>
 	<br>

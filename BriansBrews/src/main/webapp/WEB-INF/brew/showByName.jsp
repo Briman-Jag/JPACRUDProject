@@ -9,8 +9,8 @@
 </head>
 <body>
 	<div class="container">
-		<c:forEach var="brew" items="${foundBrews}">
-			<c:out value="${keyword } " />
+		<c:forEach var="brew" items="${foundBrew}">
+			<c:out value="${name } " />
 			<c:if test="${empty brew.name}">Beer not found</c:if>
 			<c:if test="${not empty brew }">
 				<h4>Beer ID: ${brew.id }</h4>
