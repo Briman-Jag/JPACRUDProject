@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="brewName">
-		<c:out value="${brew.bname } " />
+		<c:out value="${bname } " />
 		<c:if test="${empty brew.name}">Beer not found</c:if>
 		<c:if test="${not empty brew }">
 		<c:forEach var="brew" items="${bname}">
@@ -17,7 +17,7 @@
 			<h5>${brew.name}(${brew.style})</h5>
 			<p>Brewery: ${brew.breweryName} (${brew.breweryLocation})</p>
 			<p>ABV: ${brew.abv} / IBU: ${brew.ibu}</p>
-			<p>My Rating: ${brew.myRating} (Scale 1-5)</p>
+			<p>My Rating (1-5): ${brew.myRating} </p>
 		</c:forEach>
 		</c:if>
 	</div>
